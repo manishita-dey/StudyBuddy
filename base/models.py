@@ -26,6 +26,12 @@ class Room(models.Model):
         auto_now_add=True
     )  # will save the first time the room is created
 
+    class Meta:
+        ordering = [
+            "-updated",
+            "-created",
+        ]  # this will order the room list with updated first
+
     def __str__(self):
         return self.name
 
